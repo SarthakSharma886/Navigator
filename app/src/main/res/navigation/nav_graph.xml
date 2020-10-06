@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/baseFragment">
+
+    <fragment
+        android:id="@+id/baseFragment"
+        android:name="com.example.navigator.fragments.BaseFragment"
+        android:label="fragment_base"
+        tools:layout="@layout/fragment_base" >
+        <action
+            android:id="@+id/action_baseFragment_to_exampleOneFragment"
+            app:destination="@id/exampleOneFragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+        <action
+            android:id="@+id/action_baseFragment_to_exampleTwoFragment"
+            app:destination="@id/exampleTwoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/exampleOneFragment"
+        android:name="com.example.navigator.fragments.examples.ExampleOneFragment"
+        android:label="fragment_example_one"
+        tools:layout="@layout/fragment_example_one" >
+
+        <argument android:name="title"
+            android:defaultValue="None"/>
+
+    </fragment>
+    <fragment
+        android:id="@+id/exampleTwoFragment"
+        android:name="com.example.navigator.fragments.examples.example_two.ExampleTwoBaseFragment"
+        android:label="fragment_example_two"
+        tools:layout="@layout/fragment_example_two">
+
+        <argument android:name="title"
+            android:defaultValue="None"/>
+        <action
+            android:id="@+id/action_exampleTwoFragment_to_sceneOnePartOneFragment"
+            app:destination="@id/sceneOnePartOneFragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+        <action
+            android:id="@+id/action_exampleTwoFragment_to_sceneOnePartTwoFragment"
+            app:destination="@id/sceneOnePartTwoFragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+        <action
+            android:id="@+id/action_exampleTwoFragment_to_sceneOnePartThreeFragment"
+            app:destination="@id/sceneOnePartThreeFragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+
+    </fragment>
+    <fragment
+        android:id="@+id/sceneOnePartOneFragment"
+        android:name="com.example.navigator.fragments.examples.example_two.SceneOnePartOneFragment"
+        android:label="fragment_scene_one_part_one"
+        tools:layout="@layout/fragment_scene_one_part_one" >
+
+        <argument android:name="title"
+            android:defaultValue="None"/>
+    </fragment>
+    <fragment
+        android:id="@+id/sceneOnePartTwoFragment"
+        android:name="com.example.navigator.fragments.examples.example_two.SceneOnePartTwoFragment"
+        android:label="fragment_scene_one_part_two"
+        tools:layout="@layout/fragment_scene_one_part_two" >
+
+        <argument android:name="title"
+            android:defaultValue="None"/>
+    </fragment>
+    <fragment
+        android:id="@+id/sceneOnePartThreeFragment"
+        android:name="com.example.navigator.fragments.examples.example_two.SceneOnePartThreeFragment"
+        android:label="fragment_scene_one_part_three"
+        tools:layout="@layout/fragment_scene_one_part_three" />
+
+    <argument android:name="title"
+        android:defaultValue="None"/>
+
+</navigation>
